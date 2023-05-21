@@ -36,7 +36,7 @@ int ChCount(const char* const _string, char Ch)
     return CHCount;
 }
 
-int TrimDelete(char* _string)
+void TrimDelete(char* _string)
 {
 
     int Ch = 0;
@@ -45,17 +45,25 @@ int TrimDelete(char* _string)
             if (_string[Ch] == ' ')
             {
                 _string[Ch] = 0;
-                ++Ch;
+            
             }
+
+            ++Ch;
         }
 
 
-    return Ch ;
 }
 
 
 int DigitsCount(int _Number)
 {
+
+
+
+
+
+
+
     return 0;
 }
 
@@ -82,7 +90,7 @@ int main()
     }
 
     {
-        char Arr[256] = "aa  b  c dd ee";
+        char Arr[250] = "aa  b  c dd ee";
 
         TrimDelete(Arr);
 
