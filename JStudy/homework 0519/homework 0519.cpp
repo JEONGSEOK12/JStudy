@@ -23,8 +23,9 @@ int ChCount(const char* const _string, char Ch)
         char Chv = _string[Count];
         if (Chv == Ch)
         {
+
             ++CHCount;
-            return 0;
+
         }
 
         ++Count;
@@ -39,18 +40,33 @@ int ChCount(const char* const _string, char Ch)
 void TrimDelete(char* _string)
 {
 
-    int Ch = 0;
-        while (_string[Ch])
+    int Ct = 0;
+    int TrimedCt = 0;
+    char TrimedArr[240] = {};
+
+        while (_string[Ct])
         {
-            if (_string[Ch] == ' ')
-            {
-                _string[Ch] = 0;
             
+            if (_string[Ct] != ' ')
+            {
+                TrimedArr[TrimedCt] = _string[Ct];
+                ++Ct;
+                ++TrimedCt;
+            }
+            else
+            {
+                ++Ct;
             }
 
-            ++Ch;
         }
 
+        int Ct2 = 0;
+        while (_string[Ct2])
+        {
+            _string[Ct2] = TrimedArr[Ct2];
+            ++Ct2;
+
+        }
 
 }
 
@@ -69,12 +85,40 @@ int DigitsCount(int _Number)
 
 void StrCopy(const char* const _Left, char* _Right)
 {
+    int ct = 0;
+    char CopedArray[256] = {};
+    while (_Left[ct])
+    {
+        CopedArray[ct] = _Left[ct];
+        ++ct;
+    }
+
+    int Ct2 = 0;
+    while (_Left[Ct2])
+    {
+        _Right[Ct2] = CopedArray[Ct2];
+
+        ++Ct2;
+
+    }
+
+    
+
+
+
     return;
 }
 
 // 가장 어려운 숙제
 void NumberToString(int _Number, char* _Right)
 {
+
+
+
+
+
+
+
     return;
 }
 
@@ -84,13 +128,13 @@ int main()
     // 4가 리턴되어야 합니다.
     // 문자열의 마지막에 들어가는 0은 글자로 치지 않습니다.
     {
-        int Result = ChCount("ab aaa ccc ddd eee", 'w');
+        int Result = ChCount("ab aaa ccc ddd eee", 'a');
 
         int Result2 = ChCount(nullptr, 'w');
     }
 
     {
-        char Arr[250] = "aa  b  c dd ee";
+        char Arr[250] = "aa b c dd  ee";
 
         TrimDelete(Arr);
 
