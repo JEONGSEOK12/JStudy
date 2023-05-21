@@ -73,14 +73,22 @@ void TrimDelete(char* _string)
 
 int DigitsCount(int _Number)
 {
+    int ct = 0;
+    while (_Number)
+    {
+        if (_Number != 0)
+        {
+            _Number = _Number / 10;
+            ++ct;
+        }
+
+    }
+    
 
 
 
 
-
-
-
-    return 0;
+    return ct;
 }
 
 void StrCopy(const char* const _Left, char* _Right)
