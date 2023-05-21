@@ -16,20 +16,24 @@ int ChCount(const char* const _string, char Ch)
         return -1;
     }
 
-    int ChCount = 0;
-    while (_string[ChCount])
-    {
-        char Ch = _string[ChCount];
-
-        ++ChCount;
-    }
-
     int Count = 0;
+    int CHCount = 0;
+    while (_string[Count])
+    {
+        char Chv = _string[Count];
+        if (char Chv == Ch)
+        {
+            ++CHCount;
+            return;
+        }
+
+        ++Count;
+    }
 
     // for문을 돌리는건 당연한거야.
 
     // Ch와 같은 문자가 몇개들어있는지 세어서 리턴해주는 함수
-    return 0;
+    return CHCount;
 }
 
 void TrimDelete(char* _string)
