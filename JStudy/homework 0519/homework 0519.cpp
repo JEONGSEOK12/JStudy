@@ -122,6 +122,25 @@ void NumberToString(int _Number, char* _Right)
 {
 
 
+    while (_Number)
+    {
+        int Cnumber = _Number;
+        int ct = 0;
+        if (Cnumber > 10)
+        {
+           
+            Cnumber = Cnumber / 10;
+            ++ct;
+
+        }
+        else
+        {
+            _Right[ct] = Cnumber;
+
+        }
+    }
+
+
 
 
 
