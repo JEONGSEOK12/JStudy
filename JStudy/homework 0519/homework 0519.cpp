@@ -21,10 +21,10 @@ int ChCount(const char* const _string, char Ch)
     while (_string[Count])
     {
         char Chv = _string[Count];
-        if (char Chv == Ch)
+        if (Chv == Ch)
         {
             ++CHCount;
-            return;
+            return 0;
         }
 
         ++Count;
@@ -36,21 +36,21 @@ int ChCount(const char* const _string, char Ch)
     return CHCount;
 }
 
-void TrimDelete(char* _string)
+int TrimDelete(char* _string)
 {
-    char Ch = 'a';
-    ' ';
 
-    //while ()
-    //{
-    if (Ch == ' ')
-    {
-        int a = 0;
-    }
-    //}
+    int Ch = 0;
+        while (_string[Ch])
+        {
+            if (_string[Ch] == ' ')
+            {
+                _string[Ch] = 0;
+                ++Ch;
+            }
+        }
 
 
-    return;
+    return Ch ;
 }
 
 
