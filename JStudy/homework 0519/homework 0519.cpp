@@ -40,6 +40,11 @@ int ChCount(const char* const _string, char Ch)
 void TrimDelete(char* _string)
 {
 
+    if (nullptr == _string)
+    {
+        return;
+    }
+
     int Ct = 0;
     int TrimedCt = 0;
     char TrimedArr[240] = {};
@@ -93,6 +98,19 @@ int DigitsCount(int _Number)
 
 void StrCopy(const char* const _Left, char* _Right)
 {
+
+    if (nullptr == _Left)
+    {
+        return;
+    }
+    if (nullptr == _Right)
+    {
+        return;
+    }
+
+
+
+
     int ct = 0;
     char CopedArray[256] = {};
     while (_Left[ct])
@@ -120,24 +138,32 @@ void StrCopy(const char* const _Left, char* _Right)
 // 가장 어려운 숙제
 void NumberToString(int _Number, char* _Right)
 {
+    if (nullptr == _Right)
+    {
+        return -1;
+    }
+
 
 
     while (_Number)
     {
-        int Cnumber = _Number;
-        int ct = 0;
-        if (Cnumber > 10)
-        {
-           
-            Cnumber = Cnumber / 10;
-            ++ct;
+            int count = DigitsCount(_Number)
 
-        }
-        else
-        {
-            _Right[ct] = Cnumber;
 
-        }
+
+            for (i = 0; i<Count; i++)
+            {
+                int Value = _Number % 10;
+                    _Right[Count - i] = Value;
+                    _Number = _Number / 10;
+
+            }
+
+
+
+
+
+
     }
 
 
