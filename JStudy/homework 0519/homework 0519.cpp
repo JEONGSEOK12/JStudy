@@ -140,24 +140,24 @@ void NumberToString(int _Number, char* _Right)
 {
     if (nullptr == _Right)
     {
-        return -1;
-    }
+
+    };
 
 
 
     while (_Number)
     {
-            int count = DigitsCount(_Number)
+        int Count = DigitsCount(_Number);
 
+            int i = 0;
 
+        for (i = 0; i < Count ; i++)
+        {
+            int Value = _Number % 10;
+            _Right[Count - i - 1] = Value;
+            _Number = _Number / 10;
 
-            for (i = 0; i<Count; i++)
-            {
-                int Value = _Number % 10;
-                    _Right[Count - i] = Value;
-                    _Number = _Number / 10;
-
-            }
+        };
 
 
 
@@ -172,7 +172,7 @@ void NumberToString(int _Number, char* _Right)
 
 
 
-    return;
+   
 }
 
 
