@@ -17,7 +17,7 @@ int StringCount(char* _Arr)
 {
     // 위쪽 예제코드를 참고하세요
 
-    int i = 0
+    int i = 0;
         while (_Arr[i])
         {
             ++i;
@@ -36,12 +36,12 @@ void ChangeCh(char* _Arr, char _PrevCh, char _NextCh)
     //  1-1. 함수 내부에서 하지 말고
     // for while도 생각하지 말고
 
-    int = 0
+    int i = 0;
         while (_Arr[i])
         {
             if (_Arr[i] == _PrevCh)
             {
-                _Arr[i] = _NextCh
+                _Arr[i] = _NextCh;
 
             }
 
