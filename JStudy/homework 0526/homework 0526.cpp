@@ -1,9 +1,11 @@
 ﻿// ConsoleGame.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
-
 #include <iostream>
 #include <conio.h>
-#include "int4.h"
+#include"Player.h"
+#include"Int4.h"
+#include"ConsoleScreen.h"
+#include"GeneralVarFuntions.h"
 
 
 
@@ -17,16 +19,6 @@
 
 // 숙제 플레이어가 화면 바깥으로 나가지 못하게 해라.
 
-const int XLine = 20;
-const int YLine = 10;
-
-
-
-// 리스 이니셜라이저
-const int4 Left = { -1, 0 };
-const int4 Right = { 1, 0 };
-const int4 Up = { 0, -1 };
-const int4 Down = { 0, 1 };
 
 // Init('*')
 
