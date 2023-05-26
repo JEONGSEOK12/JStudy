@@ -3,34 +3,26 @@
 #include"Player.h"
 #include"Int4.h"
 #include"ConsoleScreen.h"
+#include"GeneralVarFuntions.h"
 
 
-    int4 Player::GetPos() const
+    int4 GetPos()
     {
-        return Pos;
     }
 
     void AddPos(const int4& _Pos)
     {
-        Pos += _Pos;
     }
 
 
     void SetPos(const int4& _Pos)
     {
-        // 뭔가가 그냥 거저 된다.
-        // => 내가 만들었다.
-        // => 컴파일러나 기본문법으로 생략되어 있다.
-        Pos = _Pos;
+
     }
 
     // 생성자에는 붙일수가 없다.
-    Player()
-        : Pos()
-    {
-    }
 
-    Player(const Player&) = delete;
+
 
     void Input(ConsoleScreen* _Sreen)
     {
@@ -42,7 +34,7 @@
         {
         case 'a':
 
-            MovePos = Left;
+            MovePos = GeneralVarFuntions::Left;
 
             // 화면 바깥으로 나가지 않았다면 <= 행동 true
             // 나는 이동한다.
@@ -62,7 +54,7 @@
             //}
             break;
         case 'd':
-            MovePos = Right;
+            MovePos = GeneralVarFuntions::Right;
 
             //if (false == _Sreen->IsScreenOut(GetPos() + Right))
             //{
@@ -71,7 +63,7 @@
 
             break;
         case 'w':
-            MovePos = Up;
+            MovePos = GeneralVarFuntions::Up;
 
             //if (false == _Sreen->IsScreenOut(GetPos() + Up))
             //{
@@ -79,7 +71,7 @@
             //}
             break;
         case 's':
-            MovePos = Down;
+            MovePos = GeneralVarFuntions::Down;
             break;
         default:
             break;

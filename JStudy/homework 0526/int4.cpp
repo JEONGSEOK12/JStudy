@@ -7,7 +7,6 @@
 
 
 
-
     void int4::operator=(const int4& _Other)
     {
         X = _Other.X;
@@ -34,5 +33,3 @@
         return Return;
     }
 
-
-};

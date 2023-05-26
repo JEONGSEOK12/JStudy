@@ -4,19 +4,24 @@
 
 
 
+class int4;
+
+
 class GeneralVarFuntions
 
 
 
 {
-	const int4 Left = { -1, 0 };
-	const int4 Right = { 1, 0 };
-	const int4 Up = { 0, -1 };
-	const int4 Down = { 0, 1 };
+
+public:
+	static const int4 Left;
+	static const int4 Right;
+	static const int4 Up;
+	static const int4 Down;
 
 
-	const int XLine = 20;
-	const int YLine = 10;
+	static const int XLine = 20;
+	static const int YLine = 10;
 
 
 

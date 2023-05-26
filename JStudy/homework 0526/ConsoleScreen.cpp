@@ -3,7 +3,7 @@
 #include"Player.h"
 #include"Int4.h"
 #include"ConsoleScreen.h"
-
+#include"GeneralVarFuntions.h"
 
 
     void ConsoleScreen::Init(char _BaseCh)
@@ -20,13 +20,13 @@
     void ConsoleScreen::Clear()
     {
         system("cls");
-        for (size_t y = 0; y < YLine; y++)
+        for (size_t y = 0; y < GeneralVarFuntions::YLine; y++)
         {
-            for (size_t x = 0; x < XLine; x++)
+            for (size_t x = 0; x < GeneralVarFuntions::XLine; x++)
             {
                 ArrScreen[y][x] = BaseCh;
             }
-            ArrScreen[y][XLine] = 0;
+            ArrScreen[y][GeneralVarFuntions::XLine] = 0;
         }
     }
 
@@ -42,12 +42,12 @@
             return true;
         }
 
-        if (XLine <= _Pos.X)
+        if (GeneralVarFuntions::XLine <= _Pos.X)
         {
             return true;
         }
 
-        if (YLine <= _Pos.Y)
+        if (GeneralVarFuntions::YLine <= _Pos.Y)
         {
             return true;
         }
@@ -58,7 +58,7 @@
 
     void ConsoleScreen::Print() const
     {
-        for (size_t y = 0; y < YLine; y++)
+        for (size_t y = 0; y < GeneralVarFuntions::YLine; y++)
         {
             printf_s(ArrScreen[y]);
             printf_s("\n");
