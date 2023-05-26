@@ -24,7 +24,7 @@
     <ProjectGuid>{851d94a3-0157-4705-9424-df5f9b416715}</ProjectGuid>
     <RootNamespace>homework0524</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>homework 0526</ProjectName>
+    <ProjectName>homework 0525</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -129,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FightZone.cpp" />
-    <ClCompile Include="homework 0526.cpp" />
+    <ClCompile Include="homework 0525.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>

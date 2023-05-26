@@ -2,7 +2,6 @@
 #include "Player.h"
 #include "FightZone.h"
 #include <iostream>
-int LineCount;
 
 void Monster::StatusRender()
 {
