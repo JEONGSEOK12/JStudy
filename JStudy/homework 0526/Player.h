@@ -44,12 +44,12 @@ public:
     Player(const Player&) = delete;
 
     void Input(ConsoleScreen* _Sreen);
-
+    static int4 Pos;
 protected:
-
+    
 private:
 
 
 
-    int4 Pos;
+    
 };

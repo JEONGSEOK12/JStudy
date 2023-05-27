@@ -8,6 +8,7 @@
 
     int4 GetPos()
     {
+        return Player::Pos;
     }
 
     void AddPos(const int4& _Pos)
