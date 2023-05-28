@@ -3,30 +3,77 @@
 
 #include <iostream>
 #include <conio.h>
-#include "ConsoleScreen.h"
-#include  "int4.h"
+#include "int4.h"
+
 // 숙제 플레이어가 화면 바깥으로 나가지 못하게 해라.
+
+const int XLine = 20;
+const int YLine = 10;
 
 
 // 이녀석은 캡슐화된 클래스라기 보다는 기본자료형
 
+
 // 리스 이니셜라이저
+const int4 Left = { -1, 0 };
+const int4 Right = { 1, 0 };
+const int4 Up = { 0, -1 };
+const int4 Down = { 0, 1 };
+
 // Init('*')
 
 // [*][*][0] \n
 // [*][*][0] \n
 
-
-
-
-// 기계어적으로 볼때 함수가 호출되고 함수의 메모리를 만들고
-// 메모리를 정리하는 담당자를 정해야하는 규칙이 있는데.
-// C++에서는 그걸 직접 정해줄수 있는 문법이 또 있는거야.
-// 컴파일러가 가장 최적의 함수호출규약을 알아서 정해줍니다.
-void /*__cdecl*/ Function()
+class ConsoleScreen
 {
+public:
+    ConsoleScreen()
+    {
 
-}
+    }
+
+    void Init(char _BaseCh)
+    {
+        BaseCh = _BaseCh;
+        Clear();
+    }
+
+    void SetPixel(const int4& _Pos, char _Ch)
+    {
+        ArrScreen[_Pos.Y][_Pos.X] = _Ch;
+    }
+
+    void Clear()
+    {
+        system("cls");
+        for (size_t y = 0; y < YLine; y++)
+        {
+            for (size_t x = 0; x < XLine; x++)
+            {
+                ArrScreen[y][x] = BaseCh;
+            }
+            ArrScreen[y][XLine] = 0;
+        }
+    }
+
+
+    void Print()
+    {
+        for (size_t y = 0; y < YLine; y++)
+        {
+            printf_s(ArrScreen[y]);
+            printf_s("\n");
+        }
+    }
+
+protected:
+
+
+private:
+    char BaseCh = ' ';
+    char ArrScreen[YLine][XLine + 1] = {};
+};
 
 class Player
 {
@@ -111,6 +158,15 @@ private:
 
     int4 Pos;
 };
+
+// 기계어적으로 볼때 함수가 호출되고 함수의 메모리를 만들고
+// 메모리를 정리하는 담당자를 정해야하는 규칙이 있는데.
+// C++에서는 그걸 직접 정해줄수 있는 문법이 또 있는거야.
+// 컴파일러가 가장 최적의 함수호출규약을 알아서 정해줍니다.
+void /*__cdecl*/ Function()
+{
+
+}
 
 int main()
 {

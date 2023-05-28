@@ -27,6 +27,9 @@
     <ClCompile Include="ConsoleScreen.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Gvars.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="int4.h">
@@ -36,6 +39,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="ConsoleScreen.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GVars.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
