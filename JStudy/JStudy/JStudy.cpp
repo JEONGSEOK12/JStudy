@@ -3,12 +3,9 @@
 
 #include <iostream>
 #include <conio.h>
-#include "int4.h"
+#include "ConsoleScreen.h"
 
 // 숙제 플레이어가 화면 바깥으로 나가지 못하게 해라.
-
-const int XLine = 20;
-const int YLine = 10;
 
 
 // 이녀석은 캡슐화된 클래스라기 보다는 기본자료형
@@ -25,55 +22,6 @@ const int4 Down = { 0, 1 };
 // [*][*][0] \n
 // [*][*][0] \n
 
-class ConsoleScreen
-{
-public:
-    ConsoleScreen()
-    {
-
-    }
-
-    void Init(char _BaseCh)
-    {
-        BaseCh = _BaseCh;
-        Clear();
-    }
-
-    void SetPixel(const int4& _Pos, char _Ch)
-    {
-        ArrScreen[_Pos.Y][_Pos.X] = _Ch;
-    }
-
-    void Clear()
-    {
-        system("cls");
-        for (size_t y = 0; y < YLine; y++)
-        {
-            for (size_t x = 0; x < XLine; x++)
-            {
-                ArrScreen[y][x] = BaseCh;
-            }
-            ArrScreen[y][XLine] = 0;
-        }
-    }
-
-
-    void Print()
-    {
-        for (size_t y = 0; y < YLine; y++)
-        {
-            printf_s(ArrScreen[y]);
-            printf_s("\n");
-        }
-    }
-
-protected:
-
-
-private:
-    char BaseCh = ' ';
-    char ArrScreen[YLine][XLine + 1] = {};
-};
 
 class Player
 {
