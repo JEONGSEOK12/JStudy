@@ -5,6 +5,7 @@
 #include <conio.h>
 #include "ConsoleScreen.h"
 #include "Player.h"
+#include "Wall.h"
 
 // 숙제 플레이어가 화면 바깥으로 나가지 못하게 해라.
 
@@ -31,10 +32,14 @@ int main()
     // 클래스의경우에는 
     MainPlayer.SetPos({ 10, 5 });
 
+    
+    
+
     while (true)
     {
         Screen.Clear();
         Screen.SetPixel(MainPlayer.GetPos(), 'a');
+        Screen.SetWall(5, '0');        
         Screen.Print();
 
         MainPlayer.Input();

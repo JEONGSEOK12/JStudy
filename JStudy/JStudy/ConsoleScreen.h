@@ -22,8 +22,10 @@ public:
         void Clear();
 
 
-    void Print();
+        void SetWall(int num, char Ch);
 
+
+    void Print();
 
 
 protected:

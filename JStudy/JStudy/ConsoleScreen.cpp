@@ -22,6 +22,28 @@ void ConsoleScreen::SetPixel(const int4& _Pos, char _Ch)
     ArrScreen[_Pos.Y][_Pos.X] = _Ch;
 };
 
+void ConsoleScreen::SetWall(int num, char Ch)
+{
+
+
+    for (int i = 0; i < num; i++)
+    {
+
+        SetPixel({ 3,i }, Ch);
+
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
 void ConsoleScreen::Clear()
 {
     system("cls");
