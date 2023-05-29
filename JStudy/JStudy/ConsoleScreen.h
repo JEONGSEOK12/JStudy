@@ -18,6 +18,8 @@ public:
 
         void SetPixel(const int4& _Pos, char _Ch);
 
+        void ShootSetPixel(const int4& _Pos, char _Ch);
+   
 
         void Clear();
 

@@ -46,25 +46,32 @@ const int4 Down = { 0, 1 };
         switch (Select)
         {
         case 'a':
-
             MovePos = Left;
-
- 
+            ShootPos = Left;
             break;
+
         case 'd':
             MovePos = Right;
-
- 
-
+            ShootPos = Right;
             break;
+
         case 'w':
             MovePos = Up;
-
+            ShootPos = Up;
             break;
+
         case 's':
             MovePos = Down;
-            break;
+            ShootPos = Down;
+            break; 
+    
+        case ' ':
+
+            Bullet = 1;
+
+
         default:
+            MovePos = { 0,0 };
             break;
         }
 

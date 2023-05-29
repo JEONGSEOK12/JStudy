@@ -6,7 +6,10 @@
 #include <Windows.h>
 #include "ConsoleScreen.h"
 #include "Player.h"
+// 4. 플레이어가 어떠한 키를 누르면 플레이어 위치에서
+//    총알 1발이 발사되게 만드세요.
 
+// 5. 그 총알 1발에 벽이 닿으면 벽이 없어지게 만드세요.
 
 // 숙제 플레이어가 화면 바깥으로 나가지 못하게 해라.
 
@@ -37,14 +40,27 @@ int main()
     
 
     while (true)
-    {
+    {       
         Screen.Clear();
         Screen.SetWall(5, '0');
         Screen.SetPixel(MainPlayer.GetPos(), 'a');
+                
+
         if (0 != _kbhit())
-        {
+        {        
             MainPlayer.Input(&Screen);
+
+            if (MainPlayer.Bullet == 1)
+            {
+                Screen.ShootSetPixel(MainPlayer.GetPos() + MainPlayer.ShootPos, '-');
+            }
+            
+            MainPlayer.Bullet = 0;
+
         }
+        
+
+
         Screen.Print();
 
         Sleep(200);

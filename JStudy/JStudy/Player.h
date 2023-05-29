@@ -8,6 +8,8 @@ class Player
 {
 public:
     int4 MovePos;
+    int4 ShootPos;
+    char Bullet = 0;
 
     int GetPosX();
 
