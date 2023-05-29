@@ -1,6 +1,7 @@
 
 #include "ConsoleScreen.h"
 #include "int4.h"
+#include "Player.h"
 #include <iostream>
 #include <conio.h>
 
@@ -24,22 +25,43 @@ void ConsoleScreen::SetPixel(const int4& _Pos, char _Ch)
 
 void ConsoleScreen::SetWall(int num, char Ch)
 {
-
-
     for (int i = 0; i < num; i++)
     {
-
         SetPixel({ 3,i }, Ch);
-
-
-
-
     }
-
-
-
 };
 
+
+
+bool ConsoleScreen::IsScreenOut(const int4& _Pos)
+{
+    if (0 > _Pos.X)
+    {
+        return true;
+    }
+
+    if (0 > _Pos.Y)
+    {
+        return true;
+    }
+
+    if (XLine <= _Pos.X)
+    {
+        return true;
+    }
+
+    if (YLine <= _Pos.Y)
+    {
+        return true;
+    }
+
+    if (ArrScreen[_Pos.Y][_Pos.X] == '0')
+    {
+        return true;
+    }
+
+    return false;
+};
 
 
 

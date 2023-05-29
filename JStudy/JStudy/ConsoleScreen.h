@@ -1,12 +1,12 @@
 #pragma once
 
 
-#include "int4.h"
+
 #include "GVars.h"
 
 
 
-
+class int4;
 class ConsoleScreen
 {
 public:
@@ -24,6 +24,8 @@ public:
 
         void SetWall(int num, char Ch);
 
+        bool IsScreenOut(const int4& _Pos);
+       
 
     void Print();
 

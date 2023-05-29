@@ -1,7 +1,6 @@
 #include <conio.h>
-#include "int4.h"
 #include "Player.h"
-
+#include "ConsoleScreen.h"
 
 const int4 Left = { -1, 0 };
 const int4 Right = { 1, 0 };
@@ -11,6 +10,16 @@ const int4 Down = { 0, 1 };
     int4 Player::GetPos()
     {
         return Pos;
+    }
+
+    int Player::GetPosX()
+    {
+        return Pos.X;
+    }
+
+    int Player::GetPosY()
+    {
+        return Pos.Y;
     }
 
     void Player::AddPos(const int4& _Pos)
@@ -28,42 +37,43 @@ const int4 Down = { 0, 1 };
     }
 
 
-
-    void Player::Input()
+    void Player::Input(ConsoleScreen* _Screen)
     {
         char Select = (char)_getch();
+
+     
 
         switch (Select)
         {
         case 'a':
-            if (Pos.X > 0)
-            {
-                AddPos(Left);
-            }
-            break;
 
+            MovePos = Left;
+
+ 
+            break;
         case 'd':
-            if (Pos.X < 19)
-            {
-                AddPos(Right);
-            }
-            break;
+            MovePos = Right;
 
+ 
+
+            break;
         case 'w':
-            if (Pos.Y > 0)
-            {
-                AddPos(Up);
-            }
+            MovePos = Up;
+
             break;
-
         case 's':
-            if (Pos.Y < 9)
-            {
-                AddPos(Down);
-            }
-
+            MovePos = Down;
             break;
         default:
             break;
         }
-    }
+
+        if (false == _Screen -> IsScreenOut(GetPos() + MovePos))
+        {
+                       
+                AddPos(MovePos);
+            
+        }
+    };
+
+    

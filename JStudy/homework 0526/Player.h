@@ -17,7 +17,9 @@ public:
     // 무조건 이득이다.
 
 
-    Player();
+    Player()
+    {
+    };
 
     int4 GetPos()
     {

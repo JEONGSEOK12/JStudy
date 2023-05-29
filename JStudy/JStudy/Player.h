@@ -2,11 +2,21 @@
 #include"int4.h"
 
 
-
+class ConsoleScreen;
 
 class Player
 {
 public:
+    int4 MovePos;
+
+    int GetPosX();
+
+
+    int GetPosY();
+
+
+
+
 
 
     int4 GetPos();
@@ -18,11 +28,13 @@ public:
         void SetPos(const int4& _Pos);
 
         Player()
-            : Pos() {}
+            : Pos()
+        {};
+            
 
     Player(const Player&) = delete;
 
-    void Input();
+    void Input(ConsoleScreen* _Sreen);
 
 
 protected:

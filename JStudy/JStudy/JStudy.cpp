@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include <conio.h>
+#include <Windows.h>
 #include "ConsoleScreen.h"
 #include "Player.h"
-#include "Wall.h"
+
 
 // 숙제 플레이어가 화면 바깥으로 나가지 못하게 해라.
 
@@ -30,7 +31,7 @@ int main()
 
     Player MainPlayer;
     // 클래스의경우에는 
-    MainPlayer.SetPos({ 10, 5 });
+    MainPlayer.SetPos({ 5, 5 });
 
     
     
@@ -38,12 +39,18 @@ int main()
     while (true)
     {
         Screen.Clear();
+        Screen.SetWall(5, '0');
         Screen.SetPixel(MainPlayer.GetPos(), 'a');
-        Screen.SetWall(5, '0');        
+        if (0 != _kbhit())
+        {
+            MainPlayer.Input(&Screen);
+        }
         Screen.Print();
 
-        MainPlayer.Input();
+        Sleep(200);
     }
 
 
 }
+
+
