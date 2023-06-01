@@ -67,7 +67,7 @@ const int4 Down = { 0, 1 };
     
         case ' ':
 
-            Bullet = 1;
+         
 
 
         default:

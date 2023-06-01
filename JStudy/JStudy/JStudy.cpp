@@ -6,6 +6,7 @@
 #include <Windows.h>
 #include "ConsoleScreen.h"
 #include "Player.h"
+#include "Bullet.h"
 // 4. 플레이어가 어떠한 키를 누르면 플레이어 위치에서
 //    총알 1발이 발사되게 만드세요.
 
@@ -27,6 +28,10 @@
 
 
 
+
+
+
+
 int main()
 {
     ConsoleScreen Screen;
@@ -36,29 +41,48 @@ int main()
     // 클래스의경우에는 
     MainPlayer.SetPos({ 5, 5 });
 
-    
-    
+    int i=0;
+    Bullet BulletArr[100];
+   
 
     while (true)
     {       
         Screen.Clear();
         Screen.SetWall(5, '0');
         Screen.SetPixel(MainPlayer.GetPos(), 'a');
-                
+
+   
+
+   
 
         if (0 != _kbhit())
         {        
-            MainPlayer.Input(&Screen);
+            MainPlayer.Input(&Screen);      
 
-            if (MainPlayer.Bullet == 1)
+            char Select = (char)_getch();
+            switch (Select)
             {
-                Screen.ShootSetPixel(MainPlayer.GetPos() + MainPlayer.ShootPos, '-');
+
+
+            case ' ':
+
+                BulletArr[i].SetPos({ MainPlayer.GetPosY() , MainPlayer.GetPosX() });
+                Screen.ShootSetPixel(BulletArr[i].GetPos() + MainPlayer.ShootPos, '-');
+                i++;
+
+                break;
+
+
+            default:
+                break;
             }
             
-            MainPlayer.Bullet = 0;
+
 
         }
-        
+       
+       
+
 
 
         Screen.Print();
